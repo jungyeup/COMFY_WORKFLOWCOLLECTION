@@ -1,0 +1,2785 @@
+{
+  "last_node_id": 285,
+  "last_link_id": 641,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "ModelSamplingContinuousEDM",
+      "pos": [
+        23.86477197926246,
+        313.68347609636135
+      ],
+      "size": {
+        "0": 428.01385498046875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingContinuousEDM"
+      },
+      "widgets_values": [
+        "edm_playground_v2.5",
+        90,
+        0.002
+      ]
+    },
+    {
+      "id": 28,
+      "type": "Automatic CFG",
+      "pos": [
+        579.8647719792625,
+        927.6834760963618
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Automatic CFG"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 21,
+      "type": "LoraLoader",
+      "pos": [
+        21.864771979262457,
+        812.6834760963618
+      ],
+      "size": {
+        "0": 426.0429382324219,
+        "1": 126
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 38
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "lcm-sdxl.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "EmptyLatentImage",
+      "pos": [
+        565.1025657826906,
+        885.3137781535357
+      ],
+      "size": {
+        "0": 400.14007568359375,
+        "1": 108.1263656616211
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            181
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        832,
+        1152,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "type": "PatchModelAddDownscale",
+      "pos": [
+        22.864771979262454,
+        455.68347609636135
+      ],
+      "size": {
+        "0": 427.3203430175781,
+        "1": 202
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            51,
+            177
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PatchModelAddDownscale"
+      },
+      "widgets_values": [
+        3,
+        2,
+        0,
+        0.35,
+        true,
+        "bicubic",
+        "bicubic"
+      ]
+    },
+    {
+      "id": 76,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        561.1025657826906,
+        759.3137781535357
+      ],
+      "size": {
+        "0": 210,
+        "1": 253.1719512939453
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 166
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 164,
+          "widget": {
+            "name": "text_g"
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 165,
+          "widget": {
+            "name": "text_l"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            179
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "CLIP_G",
+        "CLIP_L"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 77,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        560.1025657826906,
+        798.3137781535357
+      ],
+      "size": {
+        "0": 210,
+        "1": 254.48194885253906
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 169
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 167,
+          "widget": {
+            "name": "text_g"
+          }
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 168,
+          "widget": {
+            "name": "text_l"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            180
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "CLIP_G",
+        "CLIP_L"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 128,
+      "type": "PreviewImage",
+      "pos": [
+        2019,
+        619.9866194661458
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 274
+        }
+      ],
+      "title": "Mask Preview",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        1214.1025657826901,
+        224.31377815353508
+      ],
+      "size": {
+        "0": 415.75079345703125,
+        "1": 705.778076171875
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 10
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "PG_GEN"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VAEDecode",
+      "pos": [
+        1371.1025657826901,
+        176.31377815353508
+      ],
+      "size": {
+        "0": 161.8564910888672,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 183
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 541
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10,
+            540
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 179,
+      "type": "MaskToSEGS",
+      "pos": [
+        2271,
+        465.5687833105468
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 385
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            386
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "MASK to SEGS (Inverted)",
+      "properties": {
+        "Node name for S&R": "MaskToSEGS"
+      },
+      "widgets_values": [
+        false,
+        3,
+        false,
+        10,
+        false
+      ]
+    },
+    {
+      "id": 109,
+      "type": "PreviewImage",
+      "pos": [
+        2020,
+        330.98661946614584
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 237
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 75,
+      "type": "PrimitiveNode",
+      "pos": [
+        459.8647719792624,
+        384.68347609636135
+      ],
+      "size": {
+        "0": 398.4404602050781,
+        "1": 129.7255401611328
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            163
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text_negative"
+          }
+        }
+      ],
+      "title": "Primitive Negative Prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 70,
+      "type": "SDXLPromptStyler",
+      "pos": [
+        458.8647719792624,
+        550.6834760963618
+      ],
+      "size": {
+        "0": 400.12347412109375,
+        "1": 162.0308837890625
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "link": 162,
+          "widget": {
+            "name": "text_positive"
+          },
+          "slot_index": 0
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "link": 163,
+          "widget": {
+            "name": "text_negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            164,
+            165
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative_prompt_text_g",
+          "type": "STRING",
+          "links": [
+            167,
+            168
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStyler"
+      },
+      "widgets_values": [
+        "full body photo , Elven princess portrait",
+        "",
+        "sai-cinematic",
+        "No",
+        true,
+        true
+      ]
+    },
+    {
+      "id": 171,
+      "type": "PreviewImage",
+      "pos": [
+        3022,
+        407.5687833105468
+      ],
+      "size": {
+        "0": 218.39999389648438,
+        "1": 246
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 545
+        }
+      ],
+      "title": "Face Mask Detailer Preview",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 83,
+      "type": "Seed",
+      "pos": [
+        606,
+        844.888095020508
+      ],
+      "size": {
+        "0": 315,
+        "1": 142
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "SEED",
+          "links": [
+            178
+          ],
+          "shape": 3
+        },
+        {
+          "name": "number",
+          "type": "NUMBER",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "float",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "int",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Seed"
+      },
+      "widgets_values": [
+        479252906484994,
+        "fixed"
+      ]
+    },
+    {
+      "id": 170,
+      "type": "DetailerForEach",
+      "pos": [
+        2602,
+        139
+      ],
+      "size": {
+        "0": 400,
+        "1": 820
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 370
+        },
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 345
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 618
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 619
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 380
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 536
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 538
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            514,
+            544
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Face Detailer (SEGS)",
+      "properties": {
+        "Node name for S&R": "DetailerForEach"
+      },
+      "widgets_values": [
+        832,
+        true,
+        1152,
+        203657104569357,
+        "fixed",
+        16,
+        2,
+        "dpmpp_2m_sde",
+        "karras",
+        0.1,
+        5,
+        true,
+        true,
+        "detailed skin , skin blemishes",
+        1,
+        false,
+        20
+      ]
+    },
+    {
+      "id": 112,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2271,
+        139
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            244,
+            564,
+            618
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            245,
+            565,
+            619
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            380,
+            393,
+            559,
+            631
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "epicrealism_naturalSinRC1VAE.safetensors"
+      ]
+    },
+    {
+      "id": 121,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2336,
+        877
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 258
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            538,
+            539,
+            561,
+            633
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        21.864771979262457,
+        181.68347609636194
+      ],
+      "size": {
+        "0": 429.273193359375,
+        "1": 98
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1,
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            39,
+            166,
+            169
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "playground-v2.5-1024px-aesthetic.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "VAELoader",
+      "pos": [
+        21.10256578269043,
+        694.3137781535357
+      ],
+      "size": {
+        "0": 424.7798156738281,
+        "1": 83.64109802246094
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            541
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "diffusion_pytorch_model.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 82,
+      "type": "KSampler (WAS)",
+      "pos": [
+        867.8647719792625,
+        184.68347609636194
+      ],
+      "size": [
+        335.04345703125,
+        461.99999237060547
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 177
+        },
+        {
+          "name": "seed",
+          "type": "SEED",
+          "link": 178,
+          "slot_index": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 179
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 180
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 181
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            183
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (WAS)"
+      },
+      "widgets_values": [
+        25,
+        20,
+        3,
+        "dpmpp_2m",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 247,
+      "type": "SaveImage",
+      "pos": [
+        4306.666829427082,
+        172.62221493191177
+      ],
+      "size": {
+        "0": 583.8848876953125,
+        "1": 896.2393188476562
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 596
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "Combined_Saved"
+      ]
+    },
+    {
+      "id": 241,
+      "type": "HDR Effects (SuperBeasts.AI)",
+      "pos": [
+        4483.666829427082,
+        130.62221493191177
+      ],
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 600
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_img",
+          "type": "IMAGE",
+          "links": [
+            596
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HDR Effects (SuperBeasts.AI)"
+      },
+      "widgets_values": [
+        0.5,
+        0.25,
+        0.75,
+        0,
+        0.1,
+        0.5
+      ]
+    },
+    {
+      "id": 238,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        4484.666829427082,
+        87.6222149319118
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 516,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 628
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            600
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 239,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        4504.666829427082,
+        46.62221493191178
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            516
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4xUltrasharp_4xUltrasharpV10.pth"
+      ]
+    },
+    {
+      "id": 181,
+      "type": "DetailerForEach",
+      "pos": [
+        3254,
+        138
+      ],
+      "size": [
+        400,
+        820.0000152587891
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 395
+        },
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 386
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 635
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 636
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 393
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 537
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 539
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            394,
+            513
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Invert Detailer (SEGS)",
+      "properties": {
+        "Node name for S&R": "DetailerForEach"
+      },
+      "widgets_values": [
+        832,
+        true,
+        1152,
+        1082690413670864,
+        "fixed",
+        5,
+        5,
+        "lcm",
+        "sgm_uniform",
+        0.1,
+        5,
+        true,
+        true,
+        "",
+        1,
+        false,
+        20
+      ]
+    },
+    {
+      "id": 114,
+      "type": "LoraLoader",
+      "pos": [
+        2273,
+        662
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 244
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 245
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            635,
+            637
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            257,
+            258,
+            636
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "lcm-sd1.5.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 178,
+      "type": "InvertMask",
+      "pos": [
+        2067,
+        285
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 384
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            385,
+            512
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      }
+    },
+    {
+      "id": 85,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        2024,
+        127
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            191
+          ],
+          "shape": 3
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt"
+      ]
+    },
+    {
+      "id": 164,
+      "type": "SAMLoader",
+      "pos": [
+        2042,
+        206
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            338
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader"
+      },
+      "widgets_values": [
+        "sam_vit_b_01ec64.pth",
+        "Prefer GPU"
+      ]
+    },
+    {
+      "id": 253,
+      "type": "FaceRestoreModelLoader",
+      "pos": [
+        2024,
+        -33
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FACERESTORE_MODEL",
+          "type": "FACERESTORE_MODEL",
+          "links": [
+            529
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreModelLoader"
+      },
+      "widgets_values": [
+        "GFPGANv1.4.pth"
+      ]
+    },
+    {
+      "id": 252,
+      "type": "FaceRestoreCFWithModel",
+      "pos": [
+        1664,
+        -98
+      ],
+      "size": [
+        340.1615011431529,
+        121.69084220751438
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "facerestore_model",
+          "type": "FACERESTORE_MODEL",
+          "link": 529,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 540
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            634
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreCFWithModel"
+      },
+      "widgets_values": [
+        "YOLOv5l",
+        0.5
+      ]
+    },
+    {
+      "id": 284,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        3971,
+        129.3999969482421
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            627
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "1x_DeBLR.pth"
+      ]
+    },
+    {
+      "id": 120,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2338,
+        833
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 257
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            536,
+            537,
+            560,
+            632
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 256,
+      "type": "Image Filter Adjustments",
+      "pos": [
+        3019,
+        141.5687833105469
+      ],
+      "size": {
+        "0": 221.7296905517578,
+        "1": 226
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 544
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            545,
+            638
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Filter Adjustments"
+      },
+      "widgets_values": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0.04,
+        "true"
+      ]
+    },
+    {
+      "id": 168,
+      "type": "MaskToSEGS",
+      "pos": [
+        2272,
+        273.5687833105468
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 346
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            345
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "MASK to SEGS (Face)",
+      "properties": {
+        "Node name for S&R": "MaskToSEGS"
+      },
+      "widgets_values": [
+        false,
+        3,
+        false,
+        10,
+        false
+      ]
+    },
+    {
+      "id": 84,
+      "type": "FaceDetailer",
+      "pos": [
+        1667,
+        72.98661946614577
+      ],
+      "size": {
+        "0": 337.6000061035156,
+        "1": 1100
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 634
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 564
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 565
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 559
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 560
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 561
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 191,
+          "slot_index": 6
+        },
+        {
+          "name": "sam_model_opt",
+          "type": "SAM_MODEL",
+          "link": 338,
+          "slot_index": 7
+        },
+        {
+          "name": "segm_detector_opt",
+          "type": "SEGM_DETECTOR",
+          "link": null,
+          "slot_index": 8
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null,
+          "slot_index": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            237,
+            370,
+            395
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "cropped_refined",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 6,
+          "slot_index": 1
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "type": "IMAGE",
+          "links": [
+            274
+          ],
+          "shape": 6,
+          "slot_index": 2
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            346,
+            384,
+            640
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "cnet_images",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 6,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceDetailer"
+      },
+      "widgets_values": [
+        832,
+        true,
+        1152,
+        102013556622273,
+        "fixed",
+        10,
+        5,
+        "dpmpp_2m_sde",
+        "karras",
+        0.15,
+        5,
+        false,
+        true,
+        0.3,
+        5,
+        3,
+        "center-1",
+        0,
+        0.93,
+        0,
+        0.7,
+        "False",
+        10,
+        "extreme skin texture",
+        1,
+        true,
+        20
+      ]
+    },
+    {
+      "id": 237,
+      "type": "PreviewImage",
+      "pos": [
+        3682,
+        619
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 511
+        }
+      ],
+      "title": "Combined Image Preview",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 285,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        3692,
+        563
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 639
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 638
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 640
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            641
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ]
+    },
+    {
+      "id": 236,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        3693,
+        516
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 514
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 513
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 512
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            511,
+            639
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ]
+    },
+    {
+      "id": 183,
+      "type": "PreviewImage",
+      "pos": [
+        3689,
+        215
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 394
+        }
+      ],
+      "title": "Inverted Mask Preview",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 74,
+      "type": "PrimitiveNode",
+      "pos": [
+        459.1025657826904,
+        181.31377815353508
+      ],
+      "size": {
+        "0": 398.8759765625,
+        "1": 166.2057342529297
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            162
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text_positive"
+          }
+        }
+      ],
+      "title": "Primitive Positive Prompt",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "full body photo , Elven princess portrait"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 283,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        3971,
+        237.39999694824206
+      ],
+      "size": [
+        315,
+        826.0000152587891
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 641
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 637
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 632
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 633
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 631
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 627,
+          "slot_index": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            628
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        1,
+        147060832443165,
+        "randomize",
+        6,
+        5,
+        "lcm",
+        "sgm_uniform",
+        0.05,
+        "Linear",
+        832,
+        1152,
+        3,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        true,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      7,
+      3,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      10,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      1,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      39,
+      1,
+      1,
+      21,
+      1,
+      "CLIP"
+    ],
+    [
+      51,
+      2,
+      0,
+      28,
+      0,
+      "MODEL"
+    ],
+    [
+      162,
+      74,
+      0,
+      70,
+      0,
+      "STRING"
+    ],
+    [
+      163,
+      75,
+      0,
+      70,
+      1,
+      "STRING"
+    ],
+    [
+      164,
+      70,
+      0,
+      76,
+      1,
+      "STRING"
+    ],
+    [
+      165,
+      70,
+      0,
+      76,
+      2,
+      "STRING"
+    ],
+    [
+      166,
+      1,
+      1,
+      76,
+      0,
+      "CLIP"
+    ],
+    [
+      167,
+      70,
+      1,
+      77,
+      1,
+      "STRING"
+    ],
+    [
+      168,
+      70,
+      1,
+      77,
+      2,
+      "STRING"
+    ],
+    [
+      169,
+      1,
+      1,
+      77,
+      0,
+      "CLIP"
+    ],
+    [
+      177,
+      2,
+      0,
+      82,
+      0,
+      "MODEL"
+    ],
+    [
+      178,
+      83,
+      0,
+      82,
+      1,
+      "SEED"
+    ],
+    [
+      179,
+      76,
+      0,
+      82,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      180,
+      77,
+      0,
+      82,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      181,
+      8,
+      0,
+      82,
+      4,
+      "LATENT"
+    ],
+    [
+      183,
+      82,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      191,
+      85,
+      0,
+      84,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      237,
+      84,
+      0,
+      109,
+      0,
+      "IMAGE"
+    ],
+    [
+      244,
+      112,
+      0,
+      114,
+      0,
+      "MODEL"
+    ],
+    [
+      245,
+      112,
+      1,
+      114,
+      1,
+      "CLIP"
+    ],
+    [
+      257,
+      114,
+      1,
+      120,
+      0,
+      "CLIP"
+    ],
+    [
+      258,
+      114,
+      1,
+      121,
+      0,
+      "CLIP"
+    ],
+    [
+      274,
+      84,
+      2,
+      128,
+      0,
+      "IMAGE"
+    ],
+    [
+      338,
+      164,
+      0,
+      84,
+      7,
+      "SAM_MODEL"
+    ],
+    [
+      345,
+      168,
+      0,
+      170,
+      1,
+      "SEGS"
+    ],
+    [
+      346,
+      84,
+      3,
+      168,
+      0,
+      "MASK"
+    ],
+    [
+      370,
+      84,
+      0,
+      170,
+      0,
+      "IMAGE"
+    ],
+    [
+      380,
+      112,
+      2,
+      170,
+      4,
+      "VAE"
+    ],
+    [
+      384,
+      84,
+      3,
+      178,
+      0,
+      "MASK"
+    ],
+    [
+      385,
+      178,
+      0,
+      179,
+      0,
+      "MASK"
+    ],
+    [
+      386,
+      179,
+      0,
+      181,
+      1,
+      "SEGS"
+    ],
+    [
+      393,
+      112,
+      2,
+      181,
+      4,
+      "VAE"
+    ],
+    [
+      394,
+      181,
+      0,
+      183,
+      0,
+      "IMAGE"
+    ],
+    [
+      395,
+      84,
+      0,
+      181,
+      0,
+      "IMAGE"
+    ],
+    [
+      511,
+      236,
+      0,
+      237,
+      0,
+      "IMAGE"
+    ],
+    [
+      512,
+      178,
+      0,
+      236,
+      2,
+      "MASK"
+    ],
+    [
+      513,
+      181,
+      0,
+      236,
+      1,
+      "IMAGE"
+    ],
+    [
+      514,
+      170,
+      0,
+      236,
+      0,
+      "IMAGE"
+    ],
+    [
+      516,
+      239,
+      0,
+      238,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      529,
+      253,
+      0,
+      252,
+      0,
+      "FACERESTORE_MODEL"
+    ],
+    [
+      536,
+      120,
+      0,
+      170,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      537,
+      120,
+      0,
+      181,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      538,
+      121,
+      0,
+      170,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      539,
+      121,
+      0,
+      181,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      540,
+      9,
+      0,
+      252,
+      1,
+      "IMAGE"
+    ],
+    [
+      541,
+      22,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      544,
+      170,
+      0,
+      256,
+      0,
+      "IMAGE"
+    ],
+    [
+      545,
+      256,
+      0,
+      171,
+      0,
+      "IMAGE"
+    ],
+    [
+      559,
+      112,
+      2,
+      84,
+      3,
+      "VAE"
+    ],
+    [
+      560,
+      120,
+      0,
+      84,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      561,
+      121,
+      0,
+      84,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      564,
+      112,
+      0,
+      84,
+      1,
+      "MODEL"
+    ],
+    [
+      565,
+      112,
+      1,
+      84,
+      2,
+      "CLIP"
+    ],
+    [
+      596,
+      241,
+      0,
+      247,
+      0,
+      "IMAGE"
+    ],
+    [
+      600,
+      238,
+      0,
+      241,
+      0,
+      "IMAGE"
+    ],
+    [
+      618,
+      112,
+      0,
+      170,
+      2,
+      "MODEL"
+    ],
+    [
+      619,
+      112,
+      1,
+      170,
+      3,
+      "CLIP"
+    ],
+    [
+      627,
+      284,
+      0,
+      283,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      628,
+      283,
+      0,
+      238,
+      1,
+      "IMAGE"
+    ],
+    [
+      631,
+      112,
+      2,
+      283,
+      4,
+      "VAE"
+    ],
+    [
+      632,
+      120,
+      0,
+      283,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      633,
+      121,
+      0,
+      283,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      634,
+      252,
+      0,
+      84,
+      0,
+      "IMAGE"
+    ],
+    [
+      635,
+      114,
+      0,
+      181,
+      2,
+      "MODEL"
+    ],
+    [
+      636,
+      114,
+      1,
+      181,
+      3,
+      "CLIP"
+    ],
+    [
+      637,
+      114,
+      0,
+      283,
+      1,
+      "MODEL"
+    ],
+    [
+      638,
+      256,
+      0,
+      285,
+      1,
+      "IMAGE"
+    ],
+    [
+      639,
+      236,
+      0,
+      285,
+      0,
+      "IMAGE"
+    ],
+    [
+      640,
+      84,
+      3,
+      285,
+      2,
+      "MASK"
+    ],
+    [
+      641,
+      285,
+      0,
+      283,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Playground's Generation",
+      "bounding": [
+        11,
+        108,
+        1633,
+        850
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Face Mask & Inverted Refiner",
+      "bounding": [
+        2255,
+        61,
+        1686,
+        925
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        3950,
+        -50,
+        964,
+        1142
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        1651,
+        -175,
+        591,
+        1369
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
